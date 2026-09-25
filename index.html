@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HidroBit - Folleto Interactivo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #2e7d32;
-            --light-green: #4caf50;
-            --accent-green: #81c784;
-            --bg-color: #f1f8e9;
+            --logo-dark: #1E4D2B;
+            --logo-green: #3B7A57;
+            --logo-light: #8FBC8F;
+            --leaf-green: #A3E4D7;
+            --bg-color: #F4F9F4;
             --white: #ffffff;
-            --text-dark: #1b5e20;
+            --text-dark: #1E4D2B;
         }
 
         * {
@@ -34,35 +35,54 @@
             width: 100%;
             max-width: 480px;
             background: var(--white);
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.2);
+            border-radius: 35px;
+            box-shadow: 0 12px 35px rgba(30, 77, 43, 0.15);
             overflow: hidden;
-            border: 6px solid var(--primary-green);
+            border: 5px solid var(--logo-dark);
         }
 
         header {
-            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            background: linear-gradient(135deg, var(--logo-dark), var(--logo-green));
             color: var(--white);
-            padding: 30px 20px;
+            padding: 35px 20px 25px;
             text-align: center;
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
         }
 
-        header h1 {
+        .logo-placeholder {
+            width: 80px;
+            height: 90px;
+            margin: 0 auto 15px;
+            background: white;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-placeholder span {
             font-size: 2.2rem;
+        }
+
+        header h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2.4rem;
             margin-bottom: 5px;
-            font-weight: 800;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
         }
 
         .section {
             padding: 25px 20px;
-            border-bottom: 2px dashed #c8e6c9;
+            border-bottom: 2px dashed #D5E8D4;
         }
 
         .section:last-child {
@@ -70,18 +90,20 @@
         }
 
         h2 {
-            font-size: 1.4rem;
-            color: var(--primary-green);
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.35rem;
+            color: var(--logo-dark);
             margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-weight: 700;
         }
 
         p, li {
             font-size: 0.95rem;
             line-height: 1.6;
-            color: #333;
+            color: #2C3E50;
         }
 
         ul {
@@ -90,10 +112,10 @@
         }
 
         .card {
-            background: #f4fbf4;
-            border-left: 5px solid var(--light-green);
+            background: #EAF2EC;
+            border-left: 5px solid var(--logo-green);
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-top: 10px;
         }
 
@@ -105,22 +127,22 @@
         }
 
         .team-member {
-            background: #e8f5e9;
+            background: #F4F9F4;
             padding: 12px;
             border-radius: 12px;
             text-align: center;
-            border: 1px solid #c8e6c9;
+            border: 1px solid #D5E8D4;
         }
 
         .team-member.leader {
             grid-column: span 2;
-            background: #d4edda;
-            border-color: var(--light-green);
+            background: #EAF2EC;
+            border-color: var(--logo-green);
         }
 
         .team-member h3 {
             font-size: 0.95rem;
-            color: var(--primary-green);
+            color: var(--logo-dark);
             font-weight: 700;
         }
 
@@ -139,25 +161,26 @@
         .social-btn {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
-            background: var(--primary-green);
+            background: var(--logo-dark);
             color: white;
-            padding: 12px 20px;
+            padding: 14px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
             transition: background 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(30, 77, 43, 0.2);
         }
 
         .social-btn:hover {
-            background: var(--light-green);
+            background: var(--logo-green);
         }
 
         .interactive-box {
-            background: #fff9c4;
-            border: 2px solid #fbc02d;
+            background: #FFF9E6;
+            border: 2px solid #D4AC0D;
             padding: 15px;
             border-radius: 15px;
             text-align: center;
@@ -165,8 +188,8 @@
         }
 
         .interactive-box button {
-            background: #fbc02d;
-            color: #5d4037;
+            background: #D4AC0D;
+            color: #fff;
             border: none;
             padding: 10px 20px;
             font-weight: bold;
@@ -174,18 +197,20 @@
             cursor: pointer;
             margin-top: 10px;
             font-size: 0.9rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
 
         .interactive-box button:hover {
-            background: #f9a825;
+            background: #B7950B;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background: #1b5e20;
+            background: var(--logo-dark);
             color: white;
             font-size: 0.85rem;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -193,7 +218,10 @@
 
     <div class="phone-container">
         <header>
-            <h1>🌱 HidroBit</h1>
+            <div class="logo-placeholder">
+                <span>🌱</span>
+            </div>
+            <h1>HidroBít</h1>
             <p>Cultivando el futuro con tecnología</p>
         </header>
 
@@ -206,7 +234,7 @@
             <h2>¿Por qué Hidroponía?</h2>
             <div class="card">
                 <ul>
-                    <li><strong>Menor uso de agua:</strong> Aprovecha el recurso hídrico de manera sumamente eficiente mediante recirculación.</li>
+                    <li><strong>Menor uso de agua:</strong> Aprovecha el recurso hídrico de manera sumamente eficiente mediante recirculación en circuito.</li>
                     <li><strong>Sin tierra:</strong> Las plantas reciben los nutrientes que necesitan de forma directa a través del agua.</li>
                     <li><strong>Optimización de espacio:</strong> Permite cultivar en lugares pequeños (como balcones, cocinas o escuelas) usando una disposición en zig-zag.</li>
                 </ul>
@@ -255,16 +283,10 @@
         </div>
 
         <div class="section">
-            <h2>Redes Sociales</h2>
+            <h2>Red social</h2>
             <div class="social-links">
                 <a href="https://instagram.com/hidrobit.724" target="_blank" class="social-btn">
                     📸 Instagram: @hidrobit.724
-                </a>
-                <a href="https://tiktok.com/@hidrobit" target="_blank" class="social-btn">
-                    🎵 TikTok: @hidrobit
-                </a>
-                <a href="https://facebook.com" target="_blank" class="social-btn">
-                    📘 Facebook: Hidro Bit
                 </a>
             </div>
         </div>
